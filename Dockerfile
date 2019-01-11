@@ -36,8 +36,8 @@ ENV CIAO_ROOT           /dev/null
 ENV LD_LIBRARY_PATH     $LD_LIBRARY_PATH:$LIQUIBOOK_ROOT/lib
 
 RUN cd /root \
-    && git clone https://github.com/objectcomputing/liquibook.git \
-    && cd liquibook/ \
+    && git clone https://github.com/pkdcryptos/objectcomputing_liquibook.git \
+    && cd objectcomputing_liquibook/ \
     && git submodule init \
     && git submodule update \
     && mwc.pl -type make liquibook.mwc \
