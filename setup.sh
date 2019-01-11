@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd /root \
-    && wget http://apache.communilink.net//xerces/c/3/sources/xerces-c-3.1.2.tar.gz \
+    && wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.1.2.tar.gz \
     && wget http://nchc.dl.sourceforge.net/project/boost/boost/1.58.0/boost_1_58_0.tar.gz \
     && wget https://github.com/DOCGroup/MPC/archive/ACE+TAO+CIAO-6_3_3.tar.gz \
     && wget https://github.com/objectcomputing/quickfast/archive/V1_5.tar.gz \
@@ -36,8 +36,8 @@ export CIAO_ROOT=/dev/null
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIQUIBOOK_ROOT/lib
 
 cd /root \
-    && git clone https://github.com/objectcomputing/liquibook.git \
-    && cd liquibook/ \
+    && git clone https://github.com/pkdcryptos/objectcomputing_liquibook.git \
+    && cd objectcomputing_liquibook/ \
     && git submodule init \
     && git submodule update \
     && mwc.pl -type make liquibook.mwc \
