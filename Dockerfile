@@ -8,12 +8,11 @@ RUN apt-get update \
 
 RUN cd /root \
     && wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.1.2.tar.gz \
-    && wget http://nchc.dl.sourceforge.net/project/boost/boost/1.58.0/boost_1_58_0.tar.gz \
     && wget https://github.com/DOCGroup/MPC/archive/ACE+TAO+CIAO-6_3_3.tar.gz \
     && wget https://github.com/objectcomputing/quickfast/archive/V1_5.tar.gz \
-    && tar -xvzf xerces-c-3.1.2.tar.gz && tar -xvzf boost_1_58_0.tar.gz && tar -xvzf ACE+TAO+CIAO-6_3_3.tar.gz && tar -xvzf V1_5.tar.gz && rm -rf *.tar.gz \
+    && tar -xvzf xerces-c-3.1.2.tar.gz && tar -xvzf ACE+TAO+CIAO-6_3_3.tar.gz && tar -xvzf V1_5.tar.gz && rm -rf *.tar.gz \
     && cd /root/xerces-c-3.1.2 && ./configure --prefix=/root/xerces-c-3.1.2 && make && make install && rm -rf `ls |egrep -v -w '(lib|include)'` \
-    && cd /root/boost_1_58_0 && ./bootstrap.sh --prefix=/root/boost_1_58_0 && ./b2 --layout=versioned && ./b2 install && rm -rf `ls |egrep -v -w '(lib|include)'`
+    && apt-get  install libboost-all-dev  && rm -rf `ls |egrep -v -w '(lib|include)'`
 
 ENV QUICKFAST_ROOT      /root/quickfast-1_5
 ENV MPC_ROOT            /root/MPC-ACE-TAO-CIAO-6_3_3
