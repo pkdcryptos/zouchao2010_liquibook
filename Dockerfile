@@ -7,8 +7,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
     
 RUN cd /root \
+     && wget https://github.com/DOCGroup/MPC/archive/ACE+TAO+CIAO-6_3_3.tar.gz \
      && wget https://github.com/objectcomputing/quickfast/archive/V1_5.tar.gz \
-    &&  tar -xvzf V1_5.tar.gz && rm -rf *.tar.gz 
+   && tar -xvzf ACE+TAO+CIAO-6_3_3.tar.gz  &&  tar -xvzf V1_5.tar.gz && rm -rf *.tar.gz 
    
 ENV QUICKFAST_ROOT      /root/quickfast-1_5
 ENV MPC_ROOT            /root/MPC-ACE-TAO-CIAO-6_3_3
